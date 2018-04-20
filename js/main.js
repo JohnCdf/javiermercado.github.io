@@ -20,21 +20,31 @@ jQuery(document).ready(function($) {
 
     $(".menu-icon").click(function(e) {
     	if ($('.menu').hasClass("visuallyhidden")) {
+
 			$('.menu').removeClass("visuallyhidden");
 			$('.menu-icon').addClass("close");
+			$('.menu-item').addClass("active");
 		} else {
-			$('.menu').addClass("visuallyhidden");
+			$('.menu-item').removeClass("active");
+			$('.menu').delay(200).addClass("visuallyhidden");
 			$('.menu-icon').removeClass("close");
+			
 		}
+
+		
     });
 
     $(".menu li a").click(function(e) {
     	if ($('.menu').hasClass("visuallyhidden")) {
+
 			$('.menu').removeClass("visuallyhidden");
 			$('.menu-icon').addClass("close");
+
 		} else {
+
 			$('.menu').addClass("visuallyhidden");
 			$('.menu-icon').removeClass("close");
+			
 		}
     });
 	// Nav
@@ -66,8 +76,7 @@ $(window).load(function() {
 	fixSizes();
 	$(".loader").delay(500).fadeOut('slow');
 	$("body").css("overflow", "auto");
-	$(".home-title").removeClass("jiji");
-	$(".menu-icon").removeClass("jiji");
+	$(".jiji").removeClass("jiji");
 	
 });
 
